@@ -3,6 +3,8 @@ Author: Theron Parlin
 Email: tparlin@ctjive.com
 URLs: http://www.thoughtmechanics.com, http://www.conestogastreet.com
 
+[From Kalid: I've modified the theme above to create the BetterExplained theme]. 
+
 Description:
 I created this theme for my wordpress 1.2 blog and when I decided to upgrade to 1.3 I ported it. So, it's kind of hacked together, but it works nonetheless.
 
