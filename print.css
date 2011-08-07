@@ -1,0 +1,64 @@
+/*
+Theme Name: Conestogastreet (kazad modified)
+Theme URI: http://www.conestogastreet.com
+Description: Everything happens on Conestoga Street
+Version: 1.0
+Author: Theron Parlin
+Author URI: http://www.thoughtmechanics.com/ 
+
+Copyright 2004 Sonny Parlin, http://www.conestogastreet.com/
+
+*/
+
+.post-title{
+  font-size: 1.8em;
+  text-decoration: underline;
+}
+
+#sidebar { display:none }
+#header { height:75px }
+#content{ margin-left:0; 
+     float:none; 
+     width:auto }
+.demo .red { color:black; 
+     font-weight:bold }
+
+#content{ margin-left:0; 
+     float:none; 
+     width:auto }
+#footer, .ad { display:none }
+h1, h2, h3, h4, h5, h6 { page-break-after:avoid; 
+     page-break-inside:avoid }
+h3 { margin-left:10px; 
+     margin-bottom:0px; 
+     padding-bottom:0px }
+blockquote, table, pre { page-break-inside:avoid }
+ul, ol, dl  { page-break-before:avoid }
+img.centered { display: block; 
+     margin-left: auto; 
+     margin-right: auto; }
+img.right { padding: 4px; 
+     margin: 0 0 2px 7px; 
+     display: inline; }
+img.left { padding: 4px; 
+     margin: 0 7px 2px 0; 
+     display: inline; }
+.right { float: right; }
+.left { float: left }
+img { page-break-inside:avoid; 
+     page-break-after:avoid; }
+
+#content{
+ text-align: left;
+}
+
+#header, #breadcrumb, #post-meta, .sidebar {
+ display: none;
+}
+
+pre {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+
+.textad { display:none }

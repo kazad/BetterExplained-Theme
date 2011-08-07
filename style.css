@@ -1,0 +1,451 @@
+/*
+Theme Name: BetterExplained - V8
+Based on: http://www.conestogastreet.com
+Description: BetterExplained (v8)
+Version: 8.2009
+*/
+
+/**********
+ * General structure
+ **********/
+body {
+    background: none repeat scroll 0pt 0pt #FFFFFF;
+    color: #393939;
+    font-family: Verdana,Sans-Serif;
+    font-size: 0.7em;
+    margin: 0pt;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.column {
+    padding-right: 15px;
+    text-align: left;
+    width: 510px;
+}
+
+.lineSep {
+    border-top: 1px solid #999999;
+    width: 100%;
+}
+
+.recent-posts {
+    line-height: 20px;
+}
+
+/**********
+ * General Styles
+ **********/
+
+h1 {
+    border-bottom: 5px solid #821122;
+    color: #000000;
+    font-family: Georgia,Verdana,Arial;
+    font-size: 32px;
+    font-weight: normal;
+    margin: 0pt;
+    padding-bottom: 14px;
+    padding-top: 25px;
+    text-align: left;
+}
+
+h1.post-title {
+    border-bottom: medium none;
+    color: #14558E;
+    font-family: Georgia,Verdana,Arial;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0pt;
+    padding-bottom: 0pt;
+    padding-top: 10px;
+    text-align: left;
+}
+
+h2 {
+    font-size: 14px;
+    text-align: left;
+}
+
+h3 {
+    color: #14558E;
+    font-family: Georgia,Verdana,Arial;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 20px;
+    margin: 0pt;
+    padding-top: 10px;
+    text-align: left;
+}
+
+.post-content h2 {
+    margin-bottom: -10px;
+    margin-top: 30px;
+}
+
+h1, h2, h3 {
+    color: #821122;
+}
+
+blockquote {
+    border-left: 2px solid #14558E;
+    margin-bottom: 7px;
+    padding-left: 5px;
+}
+
+a {
+    color: #14558E;
+}
+
+a:visited {
+    color: #5E6F7E;
+}
+
+a:hover {
+    color: #394651;
+}
+
+p > img {
+    display: block;
+    margin: auto;
+}
+
+p > img.wp-smiley {
+    display: inline;
+    margin: 0px;
+}
+
+code {
+    font-size: 12px;
+    overflow: auto;
+}
+
+pre {
+    background: none repeat scroll 0pt 0pt black;
+    border: 1px solid #CCCCCC;
+    color: #ECECEC;
+    font-size: 12px;
+    overflow: auto;
+    padding: 5px 5px 5px 20px;
+}
+
+pre code {
+    overflow: auto;
+    word-wrap: break-word;
+}
+
+form {
+    margin-bottom: 0pt;
+}
+
+textarea {
+   width: 100%;
+   font-family: Verdana;
+   font-size: 1.1em;    
+}
+
+hr {
+    border: 0pt none;
+    height: 1px;
+}
+
+hr.hr1 {
+    background-color: #ECECEC;
+    color: #FFFFFF;
+    height: 1px;
+    margin: 7px 0pt;
+}
+
+.clear {
+    clear: both;
+}
+
+/**********
+ * Navigation
+ **********/
+.navbar {
+    background: none repeat scroll 0pt 0pt #821122;
+    font-size: 0.5em;
+}
+
+.navbar li {
+    color: white;
+    display: inline;
+    list-style: none outside none;
+    padding: 10px;
+}
+
+ul#navlist {
+    background: none repeat scroll 0pt 0pt #561420;
+    font-size: 1em;
+    margin: 0pt;
+    padding-bottom: 4px;
+    padding-left: 4px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+#navlist li {
+    display: inline;
+    list-style-type: none;
+}
+
+#navlist a {
+    padding: 1px 10px 3px;
+}
+
+#navlist a:link, #navlist a:visited {
+    background-color: #561420;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#navlist a:hover {
+    background-color: #FFFFFF;
+    color: #821122;
+    text-decoration: none;
+}
+
+/**********
+ * Posts
+ **********/
+
+#content {
+    line-height: 160%;
+}
+
+.blogTitle, a .blogTitle {
+    background: none repeat scroll 0pt 0pt #821122;
+    color: #FEFEFE;
+    font-size: 3em;
+    line-height: 1.5em;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.blogTitle a, .blogTitle a:hover, .blogTitle a:visited {
+    color: #FEFEFE;
+    text-decoration: none;
+}
+
+.blogDescription {
+    color: #FEFEFE;
+    font-size: 0.4em;
+    text-transform: uppercase;
+}
+
+.meta {
+    color: #666666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    padding-bottom: 0pt;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.meta li {
+    margin-left: 40px;
+}
+
+.metaBottom {
+    color: #666666;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.more-link {
+    font-style: italic;
+    text-align: right;
+}
+
+.post-secondary {
+    border-left: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+    margin-bottom: 10px;
+    margin-left: 25px;
+    padding: 5px;
+}
+
+#test {
+    background: none repeat scroll 0pt 0pt #561420;
+    border-top: 1px solid #666666;
+    padding: 4px 0pt 0pt;
+}
+
+.home a {
+    text-decoration: none;
+}
+
+.home a:hover {
+    text-decoration: underline;
+}
+
+.featureItem {
+    background: none repeat scroll 0pt 0pt #EEEEEE;
+    border: 1px solid #CCCCCC;
+    line-height: 1.2em;
+    padding: 4px 2px;
+}
+
+/**********
+ * Comments
+ **********/
+
+#commentlist li {
+    background: none repeat scroll 0pt 0pt #EAEAEA;
+    border-top: 1px solid #DADADA;
+    padding: 5px;
+}
+
+/**********
+ * Sidebar
+ **********/
+
+.sidebar {
+    border-left: 1px solid #ECECEC;
+    line-height: 1.5em;
+    padding-left: 16px;
+    text-align: left;
+    width: 260px;
+}
+
+.sidebar ul {
+    padding-left: 20px;
+}
+
+.sidebar b {
+    color: #821122;
+}
+
+.sidebar a {
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.sidebar a:visited {
+    color: #14558E;
+}
+
+.sidebar img {
+    border: 0pt none;
+}
+
+.sidebar input[type=text] {
+     width: 122px;
+}
+
+#popular-comments {
+     background: none repeat scroll 0pt 0pt #ECECEC;
+     border: 1px solid #CCCCCC;
+     list-style: none outside none;
+     margin: 0pt;
+     padding: 0px 8px;
+}
+
+#popular-comments li {
+     border-bottom: 1px solid #CCCCCC;
+     line-height: 14px;
+     padding: 4px 0px;
+}
+
+#popular-comments li:last-child {
+     border-bottom: none;
+}
+
+/**********
+ * Ads
+ **********/
+
+.textad {
+    background: none repeat scroll 0pt 0pt #FFFFEB;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+.ads img {
+    border: 1px solid #CCCCCC;
+}
+
+#myads {
+    display: none;
+}
+
+.adbox h2 {
+    margin: 0pt;
+}
+
+.advertise {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.advertise a {
+    font-weight: bold;
+}
+
+.amz-items {
+    padding-top: 5px;
+}
+
+.amz-item {
+    float: left;
+    padding-left: 5px;
+    width: 155px;
+}
+
+.amz-item a {
+    text-decoration: none;
+}
+
+.amz-item img {
+    border: 0pt none;
+}
+
+.buysellads {
+    
+}
+
+.buysellads img {
+    border: 1px solid #CCCCCC;
+}
+
+.sponsored_footer {
+    background: none repeat scroll 0pt 0pt #FFFFEB;
+}
+
+.sponsored_sidebar {
+    background: none repeat scroll 0pt 0pt #FFFFEB;
+    border: 1px solid #CCCCCC;
+    padding: 5px;
+}
+
+.buysellads img {
+     border: 1px solid #CCCCCC;
+}
+
+/***************
+ * Archive Pages
+ ****************/
+
+ul.archive-items {
+   list-style-type: none;
+   padding-left: 10px;
+}
+
+.archive-items .date {
+   display: inline-block;
+   width: 80px;
+   text-align: right;
+   padding-right: 10px;
+}
+
+.archive-items li {
+   padding: 2px 0px;   
+}
+

@@ -1,0 +1,100 @@
+<?php if ( !empty($post->post_password) && $_COOKIE['wp-postpass_' . COOKIEHASH] != $post->post_password) : ?>
+<p><?php _e('Enter your password to view comments.'); ?></p>
+<?php return; endif; ?>
+
+<h2 id="comments"><?php comments_number(__('No Responses'), __('1 Response'), __('% Responses')); ?> 
+<?php if ( comments_open() ) : ?>
+	<a href="#postcomment" title="<?php _e("Leave a comment"); ?>">&raquo;</a>
+<?php endif; ?>
+</h2>
+
+<? // Begin Comments & Trackbacks ?>
+<?php if ( $comments ) : ?>
+
+<? // Begin Trackbacks ?>
+<?php foreach ($comments as $comment) : ?>
+	<? if ($comment->comment_type == "trackback" || $comment->comment_type == "pingback" || ereg("<pingback />", $comment->comment_content) || ereg("<trackback />", $comment->comment_content)) { ?>
+
+	<? if (!$runonce) { $runonce = true; ?>
+	<h2 id="trackbacks">Trackbacks & Pingbacks</h2>
+	<ol id="trackbacklist">
+	<? } ?>
+
+	<li id="comment-<?php comment_ID() ?>">
+	<?php comment_text() ?>
+	<p><cite><?php comment_type(__('Comment'), __('Trackback'), __('Pingback')); ?> <?php _e('by'); ?> <?php comment_author_link() ?> &#8212; <?php comment_date() ?> @ <a href="#comment-<?php comment_ID() ?>"><?php comment_time() ?></a></cite> <?php edit_comment_link(__("Edit This"), ' |'); ?></p>
+	</li>
+
+	<? } ?>
+<?php endforeach; ?>
+<? if ($runonce) { ?>
+</ol>
+<? } ?>
+<? // End Trackbacks ?>
+
+<br />
+
+<? // Begin Comments ?>
+<h2 id="comments">Comments</h2>
+<ol id="commentlist">
+<?php foreach ($comments as $comment) : ?>
+	<? if ($comment->comment_type != "trackback" && $comment->comment_type != "pingback" && !ereg("<pingback />", $comment->comment_content) && !ereg("<trackback />", $comment->comment_content)) { ?>
+	
+		<li id="comment-<?php comment_ID() ?>">
+		<?php comment_text() ?>
+		<p><cite><?php comment_type(__('Comment'), __('Trackback'), __('Pingback')); ?> <?php _e('by'); ?> <?php comment_author_link() ?> &#8212; <?php comment_date() ?> @ <a href="#comment-<?php comment_ID() ?>"><?php comment_time() ?></a></cite> <?php edit_comment_link(__("Edit This"), ' |'); ?></p>
+		</li>
+	
+	<? } ?>
+<?php endforeach; ?>
+</ol>
+<? // End Comments ?>
+
+<?php else : // If there are no comments yet ?>
+	<p><?php _e('No comments yet.'); ?></p>
+<?php endif; ?>
+
+<p><?php comments_rss_link(__('<abbr title="Really Simple Syndication">RSS</abbr> feed for comments on this post.')); ?> 
+<?php if ( pings_open() ) : ?>
+	<a href="<?php trackback_url() ?>" rel="trackback"><?php _e('TrackBack <abbr title="Uniform Resource Identifier">URI</abbr>'); ?></a>
+<?php endif; ?>
+</p>
+
+<?php if ( comments_open() ) : ?>
+<h2 id="postcomment"><?php _e('Leave a comment'); ?></h2>
+
+<p><?php _e("Line and paragraph breaks automatic, e-mail address never displayed, <acronym title=\"Hypertext Markup Language\">HTML</acronym> allowed:"); ?> <code><?php echo allowed_tags(); ?></code></p>
+
+<form action="<?php echo get_settings('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
+	<p>
+	  <input type="text" name="author" id="author" class="textarea" value="<?php echo $comment_author; ?>" size="28" tabindex="1" />
+	   <label for="author"><?php _e('Name'); ?></label> <?php if ($req) _e('(required)'); ?>
+	<input type="hidden" name="comment_post_ID" value="<?php echo $post->ID; ?>" />
+	<input type="hidden" name="redirect_to" value="<?php echo wp_specialchars($_SERVER['REQUEST_URI']); ?>" />
+	</p>
+
+	<p>
+	  <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="28" tabindex="2" />
+	   <label for="email"><?php _e('E-mail'); ?></label> <?php if ($req) _e('(required)'); ?>
+	</p>
+
+	<p>
+	  <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="28" tabindex="3" />
+	   <label for="url"><?php _e('<acronym title="Uniform Resource Identifier">URI</acronym>'); ?></label>
+	</p>
+
+	<p>
+	  <label for="comment"><?php _e('Your Comment'); ?></label>
+	<br />
+	  <textarea name="comment" id="comment" cols="60" rows="4" tabindex="4"></textarea>
+	</p>
+
+	<p>
+	  <input name="submit" id="submit" type="submit" tabindex="5" value="<?php _e('Say It!'); ?>" />
+	</p>
+	<?php do_action('comment_form', $post->ID); ?>
+</form>
+
+<?php else : // Comments are closed ?>
+<p><?php _e('Sorry, the comment form is closed at this time.'); ?></p>
+<?php endif; ?>
