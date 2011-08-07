@@ -26,10 +26,6 @@ foreach($posts as $post) { start_wp();
 	<hr class="hr1" />
 <?php } ?>
 
-	<!--
-	<?php trackback_rdf(); ?>
-	-->
-
 <script src="http://feeds.feedburner.com/~s/Betterexplained?i=<?php the_permalink() ?>" type="text/javascript" charset="utf-8"></script>
 
 <?php 
@@ -50,18 +46,61 @@ foreach($posts as $post) { start_wp();
 
 <hr class="hr1" />
 
+<div class="meta" style="float:right;">
+	<?php the_time("F j, Y") ?>
+</div>
+
 <iframe src="http://www.facebook.com/plugins/like.php?href=betterexplained.com&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
 
-	<div class="meta">Posted <?php the_time("F j, Y") ?>, 
-<?php _e(" under "); ?> <?php the_category(',') ?><br>
-<?php _e("Tags:"); ?> 
-<?php if (function_exists('UTW_ShowTagsForCurrentPost')) UTW_ShowTagsForCurrentPost("commalist"); ?>
+<div class="meta">
+
+<?php 
+$categories = get_the_category();
+$category_data = array();
+$current_id = $post->ID;
+
+$related_posts = array();
+
+foreach($categories as $category) {
+	$category_data[$category->cat_ID] = array();
+	
+	$category_posts = new WP_Query("cat=" . $category->cat_ID . "&showposts=6");
+	while($category_posts->have_posts()) {
+		$category_posts->the_post();
+				
+		if ($post->ID != $current_id) {
+			$data = array('permalink' => get_permalink($post->ID), 'title' => $post->post_title);
+			$category_data[$category->cat_ID][] = $data;
+		}
+		
+		if (!is_null($category->parent)) {
+			$default_category_id = $category->parent;
+		}
+	}
+	
+	wp_reset_postdata();
+}
+
+?>
+
+Other Posts in <?php the_category(',') ?>
+<?php foreach($category_data as $items) : ?>
+<ul class="related-posts">
+	<?php $count = 0; ?>
+	<?php foreach($items as $data) : ?>
+		<li><a href="<?php echo $data['permalink']; ?>"><?php echo $data['title']; ?></a></li>
+		<?php $count++; if ($count >= 3) { break; } ?>
+	<?php endforeach; ?>
+</ul>
+<?php endforeach; ?>
+
+<?php if (has_tag()) : ?>
 <br/>
-Related Posts: 
+<?php _e("Tags:"); ?>
+<?php if (function_exists('UTW_ShowTagsForCurrentPost')) UTW_ShowTagsForCurrentPost("commalist"); ?>
+<?php endif; ?>
 
-<?php if (function_exists('related_posts')) related_posts(5, 10, '< li >', '< /li >',"","",false, false); ?>
-
-<?php if (function_exists('sociable_html')) print sociable_html(); ?>
+<br/>
 
 <div>
 <a href="<?php bloginfo('rss2_url'); ?>" title="<?php _e('Syndicate this site using RSS'); ?>">
@@ -79,9 +118,7 @@ Related Posts:
 
 <style>
 .adbox{
-  xborder: 1px solid #ccc;
   padding: 5px;
-  xfont-size: 1.2em;
   background: #f1f1f1;
   border: 2px solid #eaeaea;
 }

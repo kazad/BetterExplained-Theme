@@ -358,6 +358,11 @@ ul#navlist {
      border-bottom: none;
 }
 
+ul.related-posts {
+  margin: 0px;
+  padding: 0px;
+}
+
 /**********
  * Ads
  **********/
