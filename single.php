@@ -144,43 +144,11 @@ Like the site? Take it with you. Develop your math sense using insights, not mem
 </div>
 </div>
 <div style="clear: both;"></div>
+
+<?php if (function_exists('bex_premium')) : ?>
+    <?php echo bex_premium(); ?>
+<?php endif; ?>
 </div>
-
-<!-- 
-<hr class="hr1" />
-
-<div>
-<div class="meta">Tools of the trade:</div>
-<div class="amz-items">
-<div class="amz-item">
-<a href="http://www.amazon.com/exec/obidos/ASIN/0789723107/bettere-20"><img src="http://images.amazon.com/images/P/0789723107.01.THUMBZZZ.jpg" alt="Book Cover" /><br/>Don't Make Me Think <br/>(Web Design)</a>
-</div>
-
-<div class="amz-item">
-<a href="http://www.amazon.com/exec/obidos/ASIN/0060891548/bettere-20"><img src="http://images.amazon.com/images/P/0060891548.01.THUMBZZZ.jpg" alt="Book Cover" /><br/>On Writing Well <br/>(Writing Style)</a>
-</div>
-
-<div class="amz-item">
-<a href="http://www.amazon.com/exec/obidos/ASIN/B000HCZ8EO/bettere-20"><img src="http://images.amazon.com/images/P/B000HCZ8EO.01.THUMBZZZ.jpg" alt="Book Cover" /><br/>MS Office 2007 <br/>(Charts & Diagrams)</a>
-</div>
-<div class="clear"/>
-</div>
-<br/>
--->
-
-<script type="text/javascript"><!--
-google_ad_client = "pub-0990604499205651";
-//BetterExplained Bottom, 468x60
-google_ad_slot = "1313029194";
-google_ad_width = 468;
-google_ad_height = 60;
-//--></script>
-
-<!--
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
--->
 
 <hr class="hr1" />
 
