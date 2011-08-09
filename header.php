@@ -12,7 +12,6 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
         <link rel="shortcut icon" href="/favicon.ico" />
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript />
 
 	<?php wp_head(); ?>
 
