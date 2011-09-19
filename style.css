@@ -325,8 +325,13 @@ ul#navlist {
 }
 
 .sidebar a:hover {
-    text-decoration: underline;
+
 }
+
+.sidebar .meta a:hover {
+   text-decoration: underline;
+}
+
 
 .sidebar a:visited {
     color: #14558E;
@@ -344,19 +349,55 @@ ul#navlist {
      background: none repeat scroll 0pt 0pt #ECECEC;
      border: 1px solid #CCCCCC;
      list-style: none outside none;
-     margin: 0pt;
-     padding: 0px 8px;
+     margin: 0px;
+     padding: 0px;
 }
 
 #popular-comments li {
      border-bottom: 1px solid #CCCCCC;
      line-height: 14px;
-     padding: 4px 0px;
+     padding: 4px;
 }
 
 #popular-comments li:last-child {
      border-bottom: none;
 }
+
+/* tab styles */
+
+	#tab-wrap {
+	    width:280px;
+	}
+	
+	ul.tabs {
+	    width:280px;
+	    margin:0;
+	    padding:0;
+	}
+	ul.tabs li {
+	    display:block;
+	    float:left;
+	    padding: 0 5px 0 0;
+	}
+	ul.tabs li a {
+	    display:block;
+	    float:left;
+	    padding:5px;
+	    background-color: #ececec;
+	    color:#666;
+	    text-decoration:none;
+		border: 1px solid #ccc;
+		border-bottom: none;
+	}
+	
+	.selected {
+		color: #821122;
+	    font-weight:bold;
+	}
+	.tab-content {
+	    clear:both;
+	}
+
 
 ul.related-posts {
   margin: 0px;

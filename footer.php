@@ -21,29 +21,7 @@
 
 <div class="adsection">
 
-<!--
-<div class="advertise">
-  <a href="/advertise">Advertise on BetterExplained</a>
-</div>
--->
-
 <div class="buysellads">
-
-<!--
-<script type="text/javascript">
-Vertical1242628 = false;
-ShowAdHereBanner1242628 = false;
-RepeatAll1242628 = false;
-NoFollowAll1242628 = false;
-BannerStyles1242628 = new Array(
-    "a{display:block; float: left; font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0 4px 4px 0;text-align:center;text-decoration:none;overflow:hidden;}",
-    "img{border:1px solid #ccc;clear:right;}",
-    "a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}",
-    "a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}"
-);
-document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buysellads.com/1242628/1242628.js?v="+Date.parse(new Date())+"' type='text/javascript'%3E%3C/script%3E"));
-</script>
--->
 
 <div id="myads" class="adblock">
   <a href="http://instacalc.com" title="InstaCalc Online Calculator" id="" class="adhere myad" target="_blank">
@@ -87,20 +65,36 @@ Get the <a href="http://betterexplained.com/articles/math-betterexplained-ebook-
 
 <hr class="hr1" />
 
-<b>Popular</b> | <b><a href="/archives">All</a></b> | <b><a href="/random">Random Post</a></b>
+	<!-- BetterExplained app! -->
+	<div id="tab-wrap">
+	    <ul class="tabs">
+	        <li><a href="" class="defaulttab" rel="tabs1">Popular</a></li>
+	        <li><a href="" rel="tabs2">Upcoming</a></li>
+	        <li><a href="" rel="tabs3">Quick Insights</a></li>
+	    </ul>
 
-<ul id="popular-comments">
+	    <div class="tab-content" id="tabs1">
+		<ul id="popular-comments">
 
-<?php
-$pc = new WP_Query('orderby=comment_count&posts_per_page=12'); ?>
+		<?php $pc = new WP_Query('orderby=comment_count&posts_per_page=12'); ?>
 
-<?php while ($pc->have_posts()) : $pc->the_post(); ?>
-<li>
-   <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-</li>
+		<?php while ($pc->have_posts()) : $pc->the_post(); ?>
+		<li>
+   		<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+		</li>
 
-<?php endwhile; ?>
-</ul>
+		<?php endwhile; ?>
+		</ul>
+	    </div>
+
+	    <div class="tab-content" id="tabs2">
+			<div class="bex-aha" data-params="order=rating&user=kalid&category=upcoming,notes&limit=10" data-app-template="app-template-list">
+			</div>
+	    </div>
+	    <div class="tab-content" id="tabs3">
+			<div class="bex-aha" data-params="order=latest&user=kalid&limit=10&category_exclude=upcoming,notes" data-app-template="app-template-list"></div>
+		</div>
+	</div>
 
 <hr class="hr1" />
 
