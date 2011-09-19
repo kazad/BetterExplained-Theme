@@ -64,7 +64,7 @@ document.write(unescape("%3Cscript src='"+document.location.protocol+"//s3.buyse
 </div>
 
 <div style="float: left; width: 125px; padding-left: 10px;">
-Get the <a href="http://betterexplained.com/articles/math-betterexplained-ebook-available/">Math, BetterExplained ebook</a> for clear insights into key math concepts. <br/><br/> <a href="http://betterexplained.com/articles/math-betterexplained-ebook-available/">Get the ebook</a>
+Get the <a href="http://betterexplained.com/articles/math-betterexplained-ebook-available/">Math, BetterExplained ebook</a> for clear insights into key math concepts.
 </div>
 
 <div style="clear: both;"></div>
@@ -92,7 +92,7 @@ Get the <a href="http://betterexplained.com/articles/math-betterexplained-ebook-
 <ul id="popular-comments">
 
 <?php
-$pc = new WP_Query('orderby=comment_count&posts_per_page=10'); ?>
+$pc = new WP_Query('orderby=comment_count&posts_per_page=12'); ?>
 
 <?php while ($pc->have_posts()) : $pc->the_post(); ?>
 <li>

@@ -14,8 +14,7 @@ get_posts('order=DESC&numberposts=50000&category=' . $cat);
 		 <ul class="archive-items">
 		 	<?php foreach ($posts as $post) :?>
 			<li>
-				<span class="date">
-					<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+				<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
 			</li>
 			<?php endforeach; ?>
 		</ul>

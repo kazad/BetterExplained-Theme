@@ -76,7 +76,8 @@ div.MathJax_Display .math {
     <li><a href="/about">About</a></li>
     <li><a href="/faq">FAQ</a></li>
     <li><a href="/contact">Contact</a></li>
-    <li><a href="http://betterexplained.com/articles/math-betterexplained-ebook-available/">ebook</a></li>
+    <li><a href="/resources">Resources</a></li>
+    <li><a href="http://betterexplained.com/articles/math-betterexplained-ebook-available/">eBook</a></li>
     </ul>
   </div>
 </div> <!-- end header -->
