@@ -76,12 +76,12 @@
 
 	<p>
 	  <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" size="28" tabindex="2" />
-	   <label for="email"><?php _e('E-mail'); ?></label> <?php if ($req) _e('(required, never shown)'); ?>
+	   <label for="email"><?php _e('E-mail'); ?> (optional)</label> <?php if ($req) _e('(required, never shown)'); ?>
 	</p>
 
 	<p>
 	  <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" size="28" tabindex="3" />
-	   <label for="url"><?php _e('<acronym title="Uniform Resource Locator">URL</acronym>'); ?></label>
+	   <label for="url"><?php _e('<acronym title="Uniform Resource Locator">URL</acronym>'); ?> (optional)</label>
 	</p>
 
 	<p>
